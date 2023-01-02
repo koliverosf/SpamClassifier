@@ -37,3 +37,15 @@ def exploder(words: list, vocab: list):
 def stopwords_remover(words):
     words = [stopwords.text for stopwords in en(' '.join(words)) if not stopwords.is_stop]
     return words
+
+def translate_target(word):
+    if word =='ham':
+        return 0
+    elif word == 'spam':
+        return 1
+
+def translate_pred(word):
+    if word == 0:
+        return 'ham'
+    elif word == 1:
+        return 'spam'
